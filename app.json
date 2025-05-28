@@ -1,0 +1,47 @@
+{
+  "name": "CloneBot",
+  "description": "A Telegram bot application deployable on Heroku.",
+  "repository": "https://github.com/MRDarkOwl2K25/CloneBot",
+  "keywords": ["python", "telegram", "bot", "heroku"],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram API token from @BotFather.",
+      "required": true
+    },
+    "APP_ID": {
+      "description": "API ID from https://my.telegram.org.",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "API HASH from https://my.telegram.org.",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "User ID of the bot owner.",
+      "required": true
+    },
+    "ADMINS": {
+      "description": "User IDs of admins, separated by spaces.",
+      "required": false
+    },
+    "SESSION": {
+      "description": "Optional session string.",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo 'CloneBot has been deployed to Heroku!'"
+  }
+}
